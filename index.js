@@ -14,7 +14,7 @@ dbconnect();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use("/api/users", authRouter);
+app.use("/api", authRouter);
 
 app.use(notFound);
 app.use(errorHandler);
