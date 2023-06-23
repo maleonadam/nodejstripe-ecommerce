@@ -1,4 +1,4 @@
-// const generateToken = require("../config/jwtToken");
+const generateToken = require("../config/jwtToken");
 const User = require("../models/userModel");
 const asyncHandler = require("express-async-handler");
 
@@ -27,7 +27,7 @@ const loginUser = asyncHandler(async (req, res) => {
 			lastname: findUser?.last_name,
 			email: findUser?.email,
 			mobile: findUser?.mobile,
-			// token: generateToken(findUser?._id),
+			token: generateToken(findUser?._id),
 		});
 	} else {
 		throw new Error("Invalid Credentials!");
